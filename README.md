@@ -140,6 +140,13 @@ You can redeploy this project by adding new lines of code to source files.
 
 - GitHub:[jubaer919] (https://github.com/jubaer919)
 
+👤 **Khuraijam Henary Singh**
+
+- GitHub: [@HenaryKhuraijam](https://github.com/HenaryKhuraijam)
+- Twitter: [@HenaryKhuraijam](https://twitter.com/HenaryKhuraijam)
+- LinkedIn: [Henary Khuraijam](https://www.linkedin.com/in/henary-khuraijam-50487317a)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
