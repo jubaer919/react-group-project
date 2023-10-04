@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
+import { useDispatch, useSelector } from 'react-redux';
+import Mission from './Mission';
+import { fetchMissions } from '../../Redux/missions/missions';
 
 export default function Missions() {
+  const dispatch = useDispatch();
+  const missions = useSelector((state) => state.missions);
+
+  useEffect(() => {
+    if (missions.length === 0) {
+      dispatch(fetchMissions());
+    }
+  }, []);
   return (
     <div className="px-3 container">
       <Table responsive="md" className="my-5" striped>
@@ -13,6 +24,9 @@ export default function Missions() {
             <th className="border"> </th>
           </tr>
         </thead>
+        <tbody className="p-5">
+          {missions.map((mission) => (<Mission mission={mission} key={mission.id} />))}
+        </tbody>
       </Table>
     </div>
   );
