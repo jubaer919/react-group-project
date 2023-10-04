@@ -13,7 +13,7 @@ export default function Navbar() {
       </div>
       <h1>Space Travelers&apos; Hub</h1>
       <ul className={classes.list}>
-        <li><NavLink exact to="/" style={navLinkActive}>Rockets</NavLink></li>
+        <li><NavLink to="/" style={navLinkActive}>Rockets</NavLink></li>
         <li><NavLink to="/missions" style={navLinkActive}>Missions</NavLink></li>
         <li className={classes.profile}><NavLink to="/profile" style={navLinkActive}>My Profile</NavLink></li>
       </ul>
