@@ -15,7 +15,8 @@ export default function Rockets() {
   return (
     <div>
       {Rockets.map((r) => (
-        <IndividualRocket key={r.id} id={r.id} des={r.des} name={r.name} img={r.img} />
+        // eslint-disable-next-line max-len
+        <IndividualRocket key={r.id} id={r.id} des={r.des} name={r.name} img={r.img} re={r.reserved} />
       ))}
     </div>
   );
