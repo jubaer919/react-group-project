@@ -11,15 +11,25 @@ const baseURL = 'https://api.spacexdata.com/v4/rockets';
 
 export const fetchRocketInfo = createAsyncThunk('rockets/fetchrocketInfo', async () => {
   const response = await axios.get(baseURL);
-  // eslint-disable-next-line no-console
-  console.log(response.data);
   return response.data;
 });
 
 const rocketSlice = createSlice({
   name: 'rocket',
   initialState,
-  reducers: {},
+  reducers: {
+    rocketReserve: (state, action) => {
+      const id = action.payload;
+      const newState = state.rocket.map((rocket) => {
+        if (rocket.id !== id) {
+          return rocket;
+        }
+        return { ...rocket, reserved: true };
+      });
+
+      return { ...state, rocket: newState };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchRocketInfo.pending, (state) => {
@@ -33,10 +43,9 @@ const rocketSlice = createSlice({
             name: rocket.name,
             des: rocket.description,
             img: rocket.flickr_images[0],
+            reserved: false,
           }
         ));
-        // eslint-disable-next-line no-console
-        console.log(state.rocket);
       })
       .addCase(fetchRocketInfo.rejected, (state, action) => {
         state.status = 'Rocket info rejected';
@@ -45,5 +54,5 @@ const rocketSlice = createSlice({
   },
 });
 
-export const allRocketsInfo = (state) => state.rocket;
+export const { rocketReserve } = rocketSlice.actions;
 export default rocketSlice.reducer;
