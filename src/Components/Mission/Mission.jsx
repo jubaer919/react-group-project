@@ -1,62 +1,51 @@
 import React from 'react';
+import { Button, Badge } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-const Mission = () => {
-  const missions = [{ id: '1', description: 'description', reserved: false }];
+const Mission = ({ mission }) => {
+  const {
+    id,
+    name,
+    description,
+    reserved,
+  } = mission;
+
   return (
-    <>
-      {
-        missions.map((msn) => (
-          <tr
-            key={msn.id}
-            className={((missions.indexOf(msn) + 1) % 2 === 0 ? 'bg-light' : '')}
-          >
-            <th className="border fs-5 flex p-2">
-              <p>{msn.name}</p>
-            </th>
-            <td className="border p-2 pb-5">{msn.description}</td>
-            <td className="border p-1">
-              {msn.reserved
-                ? (
-                  <p
-                    className="text-info text-center bg-info text-white border rounded"
-                    style={{ minWidth: '120px' }}
-                  >
-                    ACTIVE MEMBER
-                  </p>
-                ) : (
-                  <p
-                    className="border rounded text-danger text-center bg-secondary text-white"
-                    style={{ minWidth: '120px' }}
-                  >
-                    NOT A MEMBER
-                  </p>
-                )}
-            </td>
-            <td className="p-2 border">
-              {!msn.reserved
-                ? (
-                  <button
-                    type="button"
-                    className="py-2 border-success rounded text-center"
-                    style={{ minWidth: '100px' }}
-                  >
-                    Join Mission
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    className="py-2 border border-danger rounded text-danger text-center"
-                    style={{ minWidth: '100px' }}
-                  >
-                    Leave Mission
-                  </button>
-                )}
-            </td>
-          </tr>
-        ))
-      }
-    </>
+    <tr key={id}>
+      <th className="border fs-5 flex p-2">
+        <p>{name}</p>
+      </th>
+      <td className="border p-2 pb-5">{description}</td>
+      <td className="border p-1 align-middle">
+        <Badge
+          bg={reserved ? 'info' : 'secondary'}
+          style={{ minWidth: '120px' }}
+          className="p-3"
+        >
+          {reserved ? 'Active Member' : 'Not A Member'}
+        </Badge>
+      </td>
+      <td className="p-2 border align-middle">
+        <Button
+          type="button"
+          variant={!reserved ? 'success' : 'outline-danger'}
+          className="p-2 rounded text-center"
+          style={{ minWidth: '120px' }}
+        >
+          {!reserved ? 'Join Mission' : 'Leave Mission'}
+        </Button>
+      </td>
+    </tr>
   );
+};
+
+Mission.propTypes = {
+  mission: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    reserved: PropTypes.bool,
+  }).isRequired,
 };
 
 export default Mission;
