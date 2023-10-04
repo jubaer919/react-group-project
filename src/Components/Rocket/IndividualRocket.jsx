@@ -1,6 +1,6 @@
 import PropType from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { rocketReserve } from '../../Redux/Rocket/rocketSlice';
+import { rocketReserve, cancleReservation } from '../../Redux/Rocket/rocketSlice';
 import classes from './IndividualRocket.module.css';
 
 export default function IndividualRocket({
@@ -9,6 +9,10 @@ export default function IndividualRocket({
   const dispatch = useDispatch();
   const reservedHandeler = () => {
     dispatch(rocketReserve(id));
+  };
+
+  const cancleHandeler = () => {
+    dispatch(cancleReservation(id));
   };
 
   return (
@@ -25,7 +29,7 @@ export default function IndividualRocket({
         </div>
         <div>
           {!re && <button type="button" className={classes['reserve-btn']} onClick={reservedHandeler}>Reserve Rocket</button>}
-          {re && <button type="button" className={classes['cancel-btn']}>Cancell Reservation</button>}
+          {re && <button type="button" className={classes['cancel-btn']} onClick={cancleHandeler}>Cancell Reservation</button>}
         </div>
       </div>
     </div>
