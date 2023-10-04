@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Badge } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { joinMission, leaveMission } from '../../Redux/missions/missions';
 
 const Mission = ({ mission }) => {
   const {
@@ -9,6 +11,15 @@ const Mission = ({ mission }) => {
     description,
     reserved,
   } = mission;
+
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    if (reserved) {
+      dispatch(leaveMission(id));
+    } else {
+      dispatch(joinMission(id));
+    }
+  };
 
   return (
     <tr key={id}>
@@ -28,6 +39,7 @@ const Mission = ({ mission }) => {
       <td className="p-2 border align-middle">
         <Button
           type="button"
+          onClick={handleClick}
           variant={!reserved ? 'success' : 'outline-danger'}
           className="p-2 rounded text-center"
           style={{ minWidth: '120px' }}
