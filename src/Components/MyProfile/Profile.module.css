@@ -16,21 +16,30 @@
   text-align: left;
 }
 
-.rocket-container h1 {
+.rocket-container ul {
+  list-style: none;
+  margin: 0;
+}
+
+.rocket-container h2,
+.mission-container h2 {
   margin-bottom: 10px;
 }
 
-.rocket-container ul {
+.rocket-container ul,
+.mission-container ul {
   list-style: none;
   margin: 0;
   padding: 0;
   border: 1px solid #ccc;
 }
 
-.rocket-container ul li {
+.rocket-container ul li,
+.mission-container ul li {
   padding: 1rem 2rem;
 }
 
-.rocket-container ul li:not(:last-child) {
+.rocket-container ul li:not(:last-child),
+.mission-container ul li:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }

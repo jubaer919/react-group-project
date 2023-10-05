@@ -17,7 +17,7 @@ export default function Profile() {
     <div className={classes['profile-container']}>
       <div className={classes['mission-container']}>
         <h2 className="">My Missions</h2>
-        <ul className="">
+        <ul>
           {myMission.length ? (
             myMission.map((mission) => (
               <li className="" key={mission.id}>
@@ -31,7 +31,7 @@ export default function Profile() {
       </div>
 
       <div className={classes['rocket-container']}>
-        <h1>Rocket</h1>
+        <h2>Rocket</h2>
         <ul>
           {rR.map((rocketName) => (
             <li key={Math.random()}>{rocketName.name}</li>
