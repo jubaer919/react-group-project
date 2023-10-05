@@ -12,7 +12,7 @@ export default function Missions() {
     if (missions.length === 0) {
       dispatch(fetchMissions());
     }
-  }, []);
+  }, [dispatch, missions]);
   return (
     <div className="px-3 container">
       <Table responsive="md" className="my-5" striped>
