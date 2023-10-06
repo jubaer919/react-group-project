@@ -138,7 +138,7 @@ You can redeploy this project by adding new lines of code to source files.
 
 👤 **Jubaer hossain maruf**
 
-- GitHub:[jubaer919] (https://github.com/jubaer919)
+- GitHub:[@jubaer919] (https://github.com/jubaer919)
 
 👤 **Khuraijam Henary Singh**
 
