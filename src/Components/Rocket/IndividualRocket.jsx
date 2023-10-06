@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { rocketReserve, cancleReservation } from '../../Redux/Rocket/rocketSlice';
 import classes from './IndividualRocket.module.css';
 
-export default function IndividualRocket({
+function IndividualRocket({
   name, img, des, id, re,
 }) {
   const dispatch = useDispatch();
@@ -43,3 +43,5 @@ IndividualRocket.propTypes = {
   id: PropType.string.isRequired,
   re: PropType.bool.isRequired,
 };
+
+export default IndividualRocket;
