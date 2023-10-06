@@ -1,0 +1,53 @@
+.container {
+  padding: 1rem 5vw;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.img {
+  width: 300px;
+}
+
+.info-container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info-container h1 {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.reserve-btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.cancel-btn {
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 8px 1rem;
+  outline: none;
+}
+
+.reserved {
+  margin-right: 1rem;
+  padding: 2px 12px;
+  background-color: palegreen;
+  color: white;
+}
