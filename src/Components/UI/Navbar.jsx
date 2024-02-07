@@ -11,7 +11,7 @@ export default function Navbar() {
       <div>
         <img src={planetLogo} alt="website logo" className={classes.img} />
       </div>
-      <h1>Space Travelers&apos; Hub</h1>
+      <h1>Space Traveler&apos;s Hub</h1>
       <ul className={classes.list}>
         <li><NavLink to="/" style={navLinkActive}>Rockets</NavLink></li>
         <li><NavLink to="/missions" style={navLinkActive}>Missions</NavLink></li>
